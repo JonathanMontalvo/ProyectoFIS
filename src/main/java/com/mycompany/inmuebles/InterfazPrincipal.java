@@ -29,56 +29,61 @@ public class InterfazPrincipal extends javax.swing.JFrame
     private void initComponents()
     {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
+        comprar = new javax.swing.JButton();
+        vender = new javax.swing.JButton();
+        precalificate = new javax.swing.JButton();
+        iniciar_Sesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("In-Muebles");
 
-        jLabel1.setText("Prueba 0");
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoSinFondo.png"))); // NOI18N
 
-        jLabel2.setText("Prueba 1");
+        comprar.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        comprar.setText("Comprar");
 
-        jLabel3.setText("Prueba 2");
+        vender.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        vender.setText("Vender");
 
-        jLabel4.setText("Prueba 3");
+        precalificate.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        precalificate.setText("Precalificate");
+
+        iniciar_Sesion.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        iniciar_Sesion.setText("Iniciar Sesión");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(210, 210, 210))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(112, 112, 112))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(269, 269, 269)
-                        .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(comprar)
+                .addGap(18, 18, 18)
+                .addComponent(vender)
+                .addGap(18, 18, 18)
+                .addComponent(precalificate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(iniciar_Sesion)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel4)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel3)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comprar)
+                            .addComponent(vender)
+                            .addComponent(precalificate)
+                            .addComponent(iniciar_Sesion))))
+                .addContainerGap(407, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,9 +135,10 @@ public class InterfazPrincipal extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton comprar;
+    private javax.swing.JButton iniciar_Sesion;
+    private javax.swing.JLabel logo;
+    private javax.swing.JButton precalificate;
+    private javax.swing.JButton vender;
     // End of variables declaration//GEN-END:variables
 }
