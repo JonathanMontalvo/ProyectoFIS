@@ -35,7 +35,7 @@ public class InterfazPrincipal extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Hello world");
+        jLabel1.setText("Prueba 0");
 
         jLabel2.setText("Prueba 1");
 
