@@ -37,9 +37,9 @@ public class InterfazPrincipal extends javax.swing.JFrame
 
         jLabel1.setText("Hello world");
 
-        jLabel2.setText("Prueba");
+        jLabel2.setText("Prueba 1");
 
-        jLabel3.setText("Agregue una etiqueta");
+        jLabel3.setText("Prueba 2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
