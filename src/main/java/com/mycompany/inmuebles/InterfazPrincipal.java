@@ -4,6 +4,17 @@
  */
 package com.mycompany.inmuebles;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
 /**
  *
  * @author mauri
@@ -17,6 +28,7 @@ public class InterfazPrincipal extends javax.swing.JFrame
     public InterfazPrincipal()
     {
         initComponents();
+        perfil.setVisible(false);
     }
 
     /**
@@ -34,6 +46,14 @@ public class InterfazPrincipal extends javax.swing.JFrame
         vender = new javax.swing.JButton();
         precalificate = new javax.swing.JButton();
         iniciar_Sesion = new javax.swing.JButton();
+        perfil = new javax.swing.JButton();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
+        label4 = new javax.swing.JLabel();
+        label5 = new javax.swing.JLabel();
+        oferta = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("In-Muebles");
@@ -51,6 +71,44 @@ public class InterfazPrincipal extends javax.swing.JFrame
 
         iniciar_Sesion.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         iniciar_Sesion.setText("Iniciar Sesión");
+        iniciar_Sesion.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                iniciar_SesionActionPerformed(evt);
+            }
+        });
+
+        perfil.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        perfil.setText("Perfil");
+        perfil.setEnabled(false);
+        perfil.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                perfilActionPerformed(evt);
+            }
+        });
+
+        label1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        label1.setText("Vende tu casa de");
+
+        label2.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        label2.setText("inmediato");
+
+        label3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        label3.setText("Te pagamos tu vivienda");
+
+        label4.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        label4.setText("en días y nos encargamos");
+
+        label5.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        label5.setText("del resto.");
+
+        oferta.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        oferta.setText("Quiero una oferta");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contratoSinFondo.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,6 +126,27 @@ public class InterfazPrincipal extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(iniciar_Sesion)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(oferta))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(969, Short.MAX_VALUE)
+                    .addComponent(perfil)
+                    .addGap(16, 16, 16)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,11 +162,72 @@ public class InterfazPrincipal extends javax.swing.JFrame
                             .addComponent(vender)
                             .addComponent(precalificate)
                             .addComponent(iniciar_Sesion))))
-                .addContainerGap(407, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(label1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label2)
+                        .addGap(18, 18, 18)
+                        .addComponent(label3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label5)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
+                .addComponent(oferta)
+                .addGap(45, 45, 45))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(25, 25, 25)
+                    .addComponent(perfil)
+                    .addContainerGap(520, Short.MAX_VALUE)))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_iniciar_SesionActionPerformed
+    {//GEN-HEADEREND:event_iniciar_SesionActionPerformed
+        // TODO add your handling code here:
+        JPanel panel = new JPanel(new BorderLayout(5, 5));
+        JPanel label = new JPanel(new GridLayout(0, 1, 2, 2));
+        label.add(new JLabel("Usuario: ", SwingConstants.RIGHT));
+        label.add(new JLabel("Contraseña: ", SwingConstants.RIGHT));
+        panel.add(label, BorderLayout.WEST);
+        JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
+        JTextField username = new JTextField();
+        controls.add(username);
+        JPasswordField password = new JPasswordField();
+        controls.add(password);
+        panel.add(controls, BorderLayout.CENTER);
+        JFrame frame = null;
+        JOptionPane.showMessageDialog(frame, panel, "Iniciar sesión", JOptionPane.QUESTION_MESSAGE);
+        if (username.getText().equals("ITTOL") && password.getText().equals("1234"))
+        {
+            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso");
+            iniciar_Sesion.setEnabled(false);
+            iniciar_Sesion.setVisible(false);
+            perfil.setEnabled(true);
+            perfil.setVisible(true);
+        } else if (username.getText().equals("ITTOL") && !password.getText().equals("1234"))
+        {
+            JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else
+        {
+            JOptionPane.showMessageDialog(null, "El usuario y la contraseña son incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_iniciar_SesionActionPerformed
+
+    private void perfilActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_perfilActionPerformed
+    {//GEN-HEADEREND:event_perfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,14 +241,7 @@ public class InterfazPrincipal extends javax.swing.JFrame
          */
         try
         {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
-                if ("Nimbus".equals(info.getName()))
-                {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
         } catch (ClassNotFoundException ex)
         {
             java.util.logging.Logger.getLogger(InterfazPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -137,7 +270,15 @@ public class InterfazPrincipal extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton comprar;
     private javax.swing.JButton iniciar_Sesion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
+    private javax.swing.JLabel label4;
+    private javax.swing.JLabel label5;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton oferta;
+    private javax.swing.JButton perfil;
     private javax.swing.JButton precalificate;
     private javax.swing.JButton vender;
     // End of variables declaration//GEN-END:variables
