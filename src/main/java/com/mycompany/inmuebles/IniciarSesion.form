@@ -112,6 +112,9 @@
           <Font name="Times New Roman" size="18" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="usuarioKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="contrasenia">
       <Properties>
@@ -119,6 +122,9 @@
           <Font name="Times New Roman" size="18" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="contraseniaKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_Ingresar">
       <Properties>
@@ -131,7 +137,8 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_IngresarActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_IngresarMouseClicked"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btn_IngresarKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="olvideContrasenia">

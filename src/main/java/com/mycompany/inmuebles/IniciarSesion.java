@@ -51,17 +51,38 @@ public class IniciarSesion extends javax.swing.JFrame
         etiquetaContrasenia.setText("Contraseña:");
 
         usuario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        usuario.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                usuarioKeyPressed(evt);
+            }
+        });
 
         contrasenia.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        contrasenia.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                contraseniaKeyPressed(evt);
+            }
+        });
 
         btn_Ingresar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btn_Ingresar.setText("Ingresar");
         btn_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_Ingresar.addActionListener(new java.awt.event.ActionListener()
+        btn_Ingresar.addMouseListener(new java.awt.event.MouseAdapter()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
+            public void mouseClicked(java.awt.event.MouseEvent evt)
             {
-                btn_IngresarActionPerformed(evt);
+                btn_IngresarMouseClicked(evt);
+            }
+        });
+        btn_Ingresar.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                btn_IngresarKeyPressed(evt);
             }
         });
 
@@ -148,8 +169,26 @@ public class IniciarSesion extends javax.swing.JFrame
         cC.setVisible(true);
     }//GEN-LAST:event_btn_CrearCuentaActionPerformed
 
-    private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btn_IngresarActionPerformed
-    {//GEN-HEADEREND:event_btn_IngresarActionPerformed
+    private void contraseniaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_contraseniaKeyPressed
+    {//GEN-HEADEREND:event_contraseniaKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyChar() == '\n')
+        {
+            btn_Ingresar.requestFocus();
+        }
+    }//GEN-LAST:event_contraseniaKeyPressed
+
+    private void usuarioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_usuarioKeyPressed
+    {//GEN-HEADEREND:event_usuarioKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyChar() == '\n')
+        {
+            contrasenia.requestFocus();
+        }
+    }//GEN-LAST:event_usuarioKeyPressed
+
+    private void btn_IngresarMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btn_IngresarMouseClicked
+    {//GEN-HEADEREND:event_btn_IngresarMouseClicked
         // TODO add your handling code here:
         if (usuario.getText().equals("ITTOL") && contrasenia.getText().equals("1234"))
         {
@@ -166,7 +205,13 @@ public class IniciarSesion extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(null, "El usuario y la contraseña son incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btn_IngresarActionPerformed
+    }//GEN-LAST:event_btn_IngresarMouseClicked
+
+    private void btn_IngresarKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_btn_IngresarKeyPressed
+    {//GEN-HEADEREND:event_btn_IngresarKeyPressed
+        // TODO add your handling code here:
+        btn_IngresarMouseClicked(null);
+    }//GEN-LAST:event_btn_IngresarKeyPressed
 
     /**
      * @param args the command line arguments
