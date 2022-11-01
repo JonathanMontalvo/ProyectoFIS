@@ -195,33 +195,8 @@ public class InterfazPrincipal extends javax.swing.JFrame
     private void iniciar_SesionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_iniciar_SesionActionPerformed
     {//GEN-HEADEREND:event_iniciar_SesionActionPerformed
         // TODO add your handling code here:
-        JPanel panel = new JPanel(new BorderLayout(5, 5));
-        JPanel label = new JPanel(new GridLayout(0, 1, 2, 2));
-        label.add(new JLabel("Usuario: ", SwingConstants.RIGHT));
-        label.add(new JLabel("Contraseña: ", SwingConstants.RIGHT));
-        panel.add(label, BorderLayout.WEST);
-        JPanel controls = new JPanel(new GridLayout(0, 1, 2, 2));
-        JTextField username = new JTextField();
-        controls.add(username);
-        JPasswordField password = new JPasswordField();
-        controls.add(password);
-        panel.add(controls, BorderLayout.CENTER);
-        JFrame frame = null;
-        JOptionPane.showMessageDialog(frame, panel, "Iniciar sesión", JOptionPane.QUESTION_MESSAGE);
-        if (username.getText().equals("ITTOL") && password.getText().equals("1234"))
-        {
-            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso");
-            iniciar_Sesion.setEnabled(false);
-            iniciar_Sesion.setVisible(false);
-            perfil.setEnabled(true);
-            perfil.setVisible(true);
-        } else if (username.getText().equals("ITTOL") && !password.getText().equals("1234"))
-        {
-            JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "ERROR", JOptionPane.ERROR_MESSAGE);
-        } else
-        {
-            JOptionPane.showMessageDialog(null, "El usuario y la contraseña son incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
+        IniciarSesion iS = new IniciarSesion();
+        iS.setVisible(true);
     }//GEN-LAST:event_iniciar_SesionActionPerformed
 
     private void perfilActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_perfilActionPerformed
@@ -269,7 +244,7 @@ public class InterfazPrincipal extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton comprar;
-    private javax.swing.JButton iniciar_Sesion;
+    public static javax.swing.JButton iniciar_Sesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
@@ -278,7 +253,7 @@ public class InterfazPrincipal extends javax.swing.JFrame
     private javax.swing.JLabel label5;
     private javax.swing.JLabel logo;
     private javax.swing.JButton oferta;
-    private javax.swing.JButton perfil;
+    public static javax.swing.JButton perfil;
     private javax.swing.JButton precalificate;
     private javax.swing.JButton vender;
     // End of variables declaration//GEN-END:variables
