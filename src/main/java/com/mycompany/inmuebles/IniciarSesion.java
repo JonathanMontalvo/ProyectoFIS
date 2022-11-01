@@ -78,13 +78,6 @@ public class IniciarSesion extends javax.swing.JFrame
                 btn_IngresarMouseClicked(evt);
             }
         });
-        btn_Ingresar.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                btn_IngresarKeyPressed(evt);
-            }
-        });
 
         olvideContrasenia.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         olvideContrasenia.setText("Olvide mi contraseña");
@@ -174,7 +167,7 @@ public class IniciarSesion extends javax.swing.JFrame
         // TODO add your handling code here:
         if (evt.getKeyChar() == '\n')
         {
-            btn_Ingresar.requestFocus();
+            btn_IngresarMouseClicked(null);
         }
     }//GEN-LAST:event_contraseniaKeyPressed
 
@@ -206,12 +199,6 @@ public class IniciarSesion extends javax.swing.JFrame
             JOptionPane.showMessageDialog(null, "El usuario y la contraseña son incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_IngresarMouseClicked
-
-    private void btn_IngresarKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_btn_IngresarKeyPressed
-    {//GEN-HEADEREND:event_btn_IngresarKeyPressed
-        // TODO add your handling code here:
-        btn_IngresarMouseClicked(null);
-    }//GEN-LAST:event_btn_IngresarKeyPressed
 
     /**
      * @param args the command line arguments
